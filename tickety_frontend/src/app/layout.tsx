@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import RetroHeader from "@/components/RetroHeader";
+import RetroFooter from "@/components/RetroFooter";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "Tickety",
+  description: "Retro-themed ticket booking UI (prototype)",
 };
 
 export default function RootLayout({
@@ -14,7 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        {children}
+        <div className="app-shell">
+          <RetroHeader />
+          <main className="container py-8">{children}</main>
+          <RetroFooter />
+        </div>
       </body>
     </html>
   );
